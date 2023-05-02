@@ -20,7 +20,8 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 from langchain.document_loaders import PyPDFLoader
 
-BING_API_KEY = "0d9d82a6237444a08f148ea23e9d7581"
+
+BING_API_KEY = os.environ.get("BING_API_KEY")
 
 
 def scrape_article(url):
@@ -85,8 +86,9 @@ def get_search_url_bing(query):
 class ChatbotAssistant:
     def __init__(self):
         self.temperature = 0.7
-        self.BING_API_KEY = "0d9d82a6237444a08f148ea23e9d7581"
-        self.openai_api_key = "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"
+
+        self.BING_API_KEY = os.environ.get("BING_API_KEY")
+        self.openai_api_key = os.environ.get("OPENAI_API_KEY")
         self.chain = load_qa_with_sources_chain(
             OpenAI(temperature=self.temperature, openai_api_key=self.openai_api_key))
         self.search_index = None
