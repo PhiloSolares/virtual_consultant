@@ -1,0 +1,10 @@
+pillow
+beautifulsoup4
+requests
+langchain
+faiss-cpu
+pdfplumber
+openai
+tiktoken
+gradio
+PyPDF2
