@@ -1,1 +1,1 @@
-worker: python virtual_consultant.py
+web: source setup.sh && python virtual_consultant.py
