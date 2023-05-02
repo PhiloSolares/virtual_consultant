@@ -1,0 +1,1 @@
+worker: python virtual_consultant.py
